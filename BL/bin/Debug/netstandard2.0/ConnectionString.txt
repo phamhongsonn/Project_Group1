@@ -1,0 +1,1 @@
+server=localhost;user id=root;password=24081999;port=3306;database=shopdb;SslMode=None
