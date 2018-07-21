@@ -27,33 +27,32 @@ namespace PL_console
                 list.Add(item);
                 if(item != null)
                 {
-                    Console.Write("Input quantity : ");
-                    int quantity = valid(Console.ReadLine());
-                    decimal price = quantity * item.unit_price;
-                    obl.AddItem(itemid,quantity,order);
                     Console.WriteLine("=================================================================");
-                    Console.WriteLine("|Item                         |Unit price  |Quantity|Price      |");
+                    Console.WriteLine("|Item ID|Item name                   |Unit price    |Quantity   |");
                     Console.WriteLine("=================================================================");
                     foreach(var i in list)
                     {
-                        Console.WriteLine("|{0,-29}|{1,-12}|{2,-8}|{3,-11}|",i.item_name,i.unit_price,quantity,price);
+                        Console.WriteLine("|{0,-7}|{1,-28}|{2,-14}|{3,-11}|",i.item_id,i.item_name,i.unit_price,i.quantity);
                         Console.WriteLine("=================================================================");
                     }
+                    Console.Write("Input quantity : ");
+                    int quantity = valid(Console.ReadLine());
+                    obl.AddItem(itemid,quantity,order);
                     Console.Write("Add more item ? (Y/N) : ");
-                    char add = Convert.ToChar(Console.ReadLine());
+                    char add = valid2(Console.ReadLine());
                     if(add == 'n'||add == 'N')
                     {
-                        Console.WriteLine("1. Pay and print bill \t\t 2. Remove order");
+                        Console.WriteLine("a. Pay and print bill \t\t b. Remove order");
                         Console.Write("Choice : ");
-                        int pay = Convert.ToInt32(Console.ReadLine());
-                        if(pay == 2)
+                        char pay = valid4(Console.ReadLine());
+                        if(pay == 'b')
                         {
                             Console.Clear();
                             Console.WriteLine("Remove Order !\nPress enter to back");
                             Console.ReadKey();
                             main.orders();
                         }
-                        else if(pay == 1)
+                        else if(pay == 'a')
                         {
                             Console.Clear();
                             Console.WriteLine(obl.CreateOrder(order)? "Compelete" : "Fail");
@@ -66,21 +65,23 @@ namespace PL_console
                             Console.WriteLine("Address : 300 Kim Nguu, Ha Noi");
                             Console.WriteLine("Phone number : 01627344748");
                             order or = obl.getlastorder();
+                            Console.WriteLine("Order ID : "+order.order_id);
                             Console.WriteLine("Date : "+or.order_date);
                             Console.WriteLine("Staff : "+or.user_name);
+                            Console.WriteLine("------------------------------ Item List ----------------------------");
                             Console.WriteLine("=====================================================================");
                             Console.WriteLine("|Item                       |Unit price     |Quantity |Price        |");
                             Console.WriteLine("=====================================================================");
                             foreach(var x in obl.GetAllItemFromLastOrderDetail(order.order_id))
                             {
-                                decimal money = item.quantity * item.unit_price;
+                                decimal money = x.price * x.amount;
                                 Console.WriteLine("|{0,-27}|{1,-15}|{2,-9}|{3,-13}|",x.item_name,x.price,x.amount,money);
                                 Console.WriteLine("=====================================================================");
                             }
-                            Console.WriteLine("                                  TOTAL : "+obl.Money(order));
-                            Console.WriteLine(".................................................................");
-                            Console.WriteLine("                       Thanks You");
-                            Console.WriteLine("                     SEE YOU AIGAIN");
+                            Console.WriteLine("                                             TOTAL : "+obl.Money(order));
+                            Console.WriteLine(".....................................................................");
+                            Console.WriteLine("                             Thanks You");
+                            Console.WriteLine("                           SEE YOU AIGAIN");
                             Console.WriteLine("Press enter to back to menu!");
                             Console.ReadKey();
                             main.orders();
@@ -91,7 +92,7 @@ namespace PL_console
         }
         public int valid(string a)
         {
-            Regex regex = new Regex("[1-9]");
+            Regex regex = new Regex("[0-9]");
             MatchCollection matchcollectionstr = regex.Matches(a);
             while ((matchcollectionstr.Count < a.Length) || (a==""))
             {
@@ -100,6 +101,42 @@ namespace PL_console
                 matchcollectionstr= regex.Matches(a);
             }
             return Convert.ToInt32(a);
+        }
+        public char valid2(string a)
+        {
+            Regex regex = new Regex("[a-zA-Z]");
+            MatchCollection matchCollectionstr = regex.Matches(a);
+            while ((matchCollectionstr.Count < a.Length) || (a != "y" && a != "Y" && a != "n" && a != "N") || (a.Length > 1)||a =="")
+            {
+                Console.Write("Not valid ! please re-enter : ");
+                a = Console.ReadLine();
+                matchCollectionstr = regex.Matches(a);
+            }
+            return Convert.ToChar(a);
+        }
+        public int valid3(string a)
+        {
+            Regex regex = new Regex("[0-9]");
+            MatchCollection matchcollectionstr = regex.Matches(a);
+            while ((matchcollectionstr.Count < a.Length) || (a=="")|| a != "1" ||a !="2")
+            {
+                Console.Write("Not valid ! please re-enter : ");
+                a = Console.ReadLine();
+                matchcollectionstr= regex.Matches(a);
+            }
+            return Convert.ToInt32(a);
+        }
+        public char valid4(string a)
+        {
+            Regex regex = new Regex("[a-zA-Z]");
+            MatchCollection matchCollectionstr = regex.Matches(a);
+            while ((matchCollectionstr.Count < a.Length) || (a != "a" && a != "A" && a != "b" && a != "B") || (a.Length > 1)||a =="")
+            {
+                Console.Write("Not valid ! please re-enter : ");
+                a = Console.ReadLine();
+                matchCollectionstr = regex.Matches(a);
+            }
+            return Convert.ToChar(a);
         }
 
     }

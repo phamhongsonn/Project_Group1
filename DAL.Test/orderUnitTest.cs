@@ -12,14 +12,14 @@ namespace DAL.Test
         private itemDAL idal = new itemDAL();
         private orderDAL odal = new orderDAL();
         [Fact]
-        public void Success()
+        public void order01()
         {
             order.itemlist.Add(idal.Getitembyid(1));
             order.itemlist[0].quantity = 1;
             Assert.False(odal.CreateOrder(order));
         }
         [Fact]
-        public void Fail01()
+        public void order02()
         {
             order.itemlist.Add(idal.Getitembyid(1));
             order.itemlist[0].quantity = 0;

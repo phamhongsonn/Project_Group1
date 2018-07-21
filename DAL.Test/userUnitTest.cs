@@ -10,7 +10,7 @@ namespace DAL.Test
     {
         private UserDal udal = new UserDal();
         [Fact]
-        public void Success()
+        public void Login01()
         {
             string username = "staff1";
             string pass = "staff1";
@@ -19,7 +19,7 @@ namespace DAL.Test
             Assert.NotNull(user);
         }
         [Fact]
-        public void Fail01()
+        public void Login02()
         {
             string username = "staff1";
             string pass = "123123";
@@ -27,7 +27,7 @@ namespace DAL.Test
             Assert.Null(user); 
         }
         [Fact]
-        public void Fail02()
+        public void Login03()
         {
             string username = null;
             string pass = null;
@@ -35,7 +35,7 @@ namespace DAL.Test
             Assert.Null(user); 
         }
         [Fact]
-        public void Fail03()
+        public void Login04()
         {
             string username = "%$@%&";
             string pass = "@$^&%#";

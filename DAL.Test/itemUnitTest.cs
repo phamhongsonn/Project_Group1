@@ -10,28 +10,28 @@ namespace DAL.Test
     {
         private itemDAL idal = new itemDAL();
         [Fact]
-        public void Success()
+        public void item01()
         {
             int id = 1;
             item item = idal.Getitembyid(id);
             Assert.NotNull(item);
         }
         [Fact]
-        public void Fail01()
+        public void item02()
         {
             char id = 'a';
             item item= idal.Getitembyid(id);
             Assert.Null(item); 
         }
         [Fact]
-        public void Fail02()
+        public void item03()
         {
             int id = 0;
             item item= idal.Getitembyid(id);
             Assert.Null(item); 
         }
         [Fact]
-        public void Fail03()
+        public void item04()
         {
             int id = -1;
             item item= idal.Getitembyid(id);
