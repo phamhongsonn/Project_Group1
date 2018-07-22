@@ -1,0 +1,11 @@
+C:\Users\Admin\Desktop\Project_Group1\DAL\bin\Debug\netstandard2.0\wĩn10-64\ConnectionString.txt
+C:\Users\Admin\Desktop\Project_Group1\DAL\bin\Debug\netstandard2.0\wĩn10-64\DAL.deps.json
+C:\Users\Admin\Desktop\Project_Group1\DAL\bin\Debug\netstandard2.0\wĩn10-64\DAL.dll
+C:\Users\Admin\Desktop\Project_Group1\DAL\bin\Debug\netstandard2.0\wĩn10-64\DAL.pdb
+C:\Users\Admin\Desktop\Project_Group1\DAL\bin\Debug\netstandard2.0\wĩn10-64\Persistence.dll
+C:\Users\Admin\Desktop\Project_Group1\DAL\bin\Debug\netstandard2.0\wĩn10-64\Persistence.pdb
+C:\Users\Admin\Desktop\Project_Group1\DAL\obj\Debug\netstandard2.0\wĩn10-64\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Project_Group1\DAL\obj\Debug\netstandard2.0\wĩn10-64\DAL.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Project_Group1\DAL\obj\Debug\netstandard2.0\wĩn10-64\DAL.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Project_Group1\DAL\obj\Debug\netstandard2.0\wĩn10-64\DAL.dll
+C:\Users\Admin\Desktop\Project_Group1\DAL\obj\Debug\netstandard2.0\wĩn10-64\DAL.pdb

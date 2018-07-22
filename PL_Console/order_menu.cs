@@ -26,9 +26,9 @@ namespace PL_console
                 item item = ibl.Getitembyid(itemid);
                 list.Add(item);
                 if(item != null)
-                {
+                {     
                     Console.WriteLine("=================================================================");
-                    Console.WriteLine("|Item ID|Item name                   |Unit price    |Quantity   |");
+                    Console.WriteLine("|Item ID|Item name                   |Unit price    | Quantit   |");
                     Console.WriteLine("=================================================================");
                     foreach(var i in list)
                     {
