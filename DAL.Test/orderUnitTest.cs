@@ -32,7 +32,7 @@ namespace DAL.Test
             order.itemlist.Add(idal.Getitembyid(1));
             order.itemlist[0].quantity = 1;
             odal.CreateOrder(order);
-            Assert.NotNull(odal.CreateOrder(null));
+            Assert.False(odal.CreateOrder(null));
         }
 
         

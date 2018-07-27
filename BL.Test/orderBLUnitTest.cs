@@ -37,7 +37,7 @@ namespace BL.Test
             order.itemlist.Add(ibl.Getitembyid(2));
             order.itemlist[0].quantity = 1;
             obl.CreateOrder(order);
-            Assert.NotNull(obl.getlastorder());
+            Assert.NotNull(obl.GetLastOrder());
         }
         
     }

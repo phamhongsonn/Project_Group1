@@ -13,19 +13,14 @@ namespace BL
             bool result = odal.CreateOrder(order);
             return result;
         }
-        public order getlastorder()
+        public order GetLastOrder()
         {
             return odal.GetLastOrder(null);
         }
-        public List<orderdetail> GetLastOrderDetail(int? id)
+        public List<orderdetail> GetOrderDetail()
         {
-            return odal.GetAllItemFromLastOrderDetail(null);
+            return odal.GetLastOrderDetail(null);
         }
-        public List<orderdetail> GetAllItemFromLastOrderDetail(int? id)
-        {
-            return odal.GetAllItemFromLastOrderDetail(null);
-        }
-     
         public bool AddItem(int itemid,int quantity,order order)
         {
             try
