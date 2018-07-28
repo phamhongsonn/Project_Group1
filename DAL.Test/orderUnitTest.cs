@@ -16,7 +16,7 @@ namespace DAL.Test
         {
             order.itemlist.Add(idal.Getitembyid(1));
             order.itemlist[0].quantity = 1;
-            Assert.False(odal.CreateOrder(order));
+            Assert.True(odal.CreateOrder(order));
         }
         [Fact]
         public void order02()
@@ -25,16 +25,5 @@ namespace DAL.Test
             order.itemlist[0].quantity = 0;
             Assert.False(odal.CreateOrder(order));
         }
-        [Fact]
-        public void getlastorderTest()
-        {
-
-            order.itemlist.Add(idal.Getitembyid(1));
-            order.itemlist[0].quantity = 1;
-            odal.CreateOrder(order);
-            Assert.False(odal.CreateOrder(null));
-        }
-
-        
     }
 }

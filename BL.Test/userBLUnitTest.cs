@@ -17,14 +17,6 @@ namespace BL.Test
             users user = ubl.Login(username,pass);
             Assert.NotNull(user);
         }
-        [Fact]
-        public void fail()
-        {
-            string username = "@#%#$";
-            string pass = "@#$#@T";
-            users user = ubl.Login(username,pass);
-            Assert.NotNull(user);
-        }
         
     }
 }

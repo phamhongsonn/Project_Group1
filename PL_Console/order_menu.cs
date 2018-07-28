@@ -133,13 +133,12 @@ namespace PL_console
                         }
                     }
                 }
-                if (item == null)
+                else if (item == null)
                 {
 
-                    Console.WriteLine("ID sách không tồn tại...");
-                    Console.Write("Nhấn phím [Enter] để nhập lại ID sách...");
+                    Console.WriteLine("Not exist item !");
+                    Console.Write("Press enter to re-enter !");
                     Console.ReadLine();
-
                 }
             }
         }

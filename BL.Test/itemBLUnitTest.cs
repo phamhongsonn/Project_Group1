@@ -1,5 +1,4 @@
 using System;
-using DAL;
 using Persitence;
 using MySql.Data.MySqlClient;
 using Xunit;

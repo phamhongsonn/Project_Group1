@@ -15,7 +15,7 @@ namespace BL.Test
         {
             order.itemlist.Add(ibl.Getitembyid(1));
             order.itemlist[0].quantity = 1;
-            Assert.False(obl.CreateOrder(order));
+            Assert.True(obl.CreateOrder(order));
         }
         [Fact]
         public void CreateOrderFail()
@@ -31,14 +31,5 @@ namespace BL.Test
            obl.CreateOrder(order);
            Assert.Equal(300000,obl.Money(order));
         }
-        [Fact]
-        public void getlastorderTest()
-        {
-            order.itemlist.Add(ibl.Getitembyid(2));
-            order.itemlist[0].quantity = 1;
-            obl.CreateOrder(order);
-            Assert.NotNull(obl.GetLastOrder());
-        }
-        
     }
 }
